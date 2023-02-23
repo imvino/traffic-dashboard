@@ -38,7 +38,9 @@ function process(movement, timeFrame, from, to) {
         Number(from) <= Number(v.entry_date) &&
         Number(v.entry_date) <= Number(to)
     );
-
+    if (filterData.length < 10) {
+      return timeFrameConverter(dummyData.TMC, movement, timeFrame, from + to);
+    }
     return timeFrameConverter(filterData, movement, timeFrame, from + to);
   }
 }
