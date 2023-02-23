@@ -8,7 +8,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-// import { ReactQueryDevtools } from 'react-query-devtools';
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -84,6 +84,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
             <Component {...pageProps} />
           </MantineProvider>
         </ColorSchemeProvider>
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </QueryClientProvider>
     </>
   );

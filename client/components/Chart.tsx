@@ -22,14 +22,16 @@ function Chart({ movementKey, searchDate }) {
     const [timeFrame, setTimeFrame] = useState('15m');
 
     const { isLoading, error, data } = useQuery({
-        queryKey: [movementKey + timeFrame + searchDate[0].getTime() + searchDate[1].getTime()],
+        queryKey: [movementKey, timeFrame, searchDate[0].getTime(), searchDate[1].getTime()],
         queryFn: () =>
             fetch('http://localhost:3001/' + movementKey + '/' + timeFrame + '/' + searchDate[0].getTime() + '/' + searchDate[1].getTime()).then(
                 (res) => res.json(),
             ),
+        staleTime: 1 * 60 * 1000, // 1min
     })
 
     let calculation = useMemo(() => timeConvert(data, movementKey), [data, movementKey]);
+
 
     useEffect(() => {
         if (data) setProcessedData(calculation)
@@ -90,8 +92,15 @@ function Chart({ movementKey, searchDate }) {
                 </Group>
             </div >
             <Box p="xs">
-                {isLoading && <Center><Loader variant="bars" /></Center>}
-                {<LineChart />}
+                {
+                    isLoading ?
+                        <Center><Loader variant="bars" /></Center> :
+                        error ?
+                            <Alert icon={<IconAlertCircle size={16} />} title="Oops!" color="red">
+                                Something went wrong!
+                            </Alert> :
+                            <LineChart />
+                }
             </Box>
 
         </Paper >

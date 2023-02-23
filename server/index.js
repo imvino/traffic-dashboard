@@ -17,7 +17,7 @@ fastify.get('/:movement/:timeFrame/:from/:to', (request, reply) => {
       console.error(error);
     }
   } else {
-    reply.send({ error: 'invalid url' });
+    reply.code(404).send({ error: 'invalid url' });
   }
 });
 
