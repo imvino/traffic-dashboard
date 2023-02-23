@@ -11,7 +11,6 @@ specifiers:
   '@tanstack/react-query': ^4.24.10
   '@types/react': 18.0.28
   cookies-next: ^2.1.1
-  json-loader: ^0.5.7
   next: 12.3.1
   react: 18.2.0
   react-dom: 18.2.0
@@ -27,7 +26,6 @@ dependencies:
   '@tabler/icons': 1.119.0_biqbaboplfbrettd7655fr4n2y
   '@tanstack/react-query': 4.24.10_biqbaboplfbrettd7655fr4n2y
   cookies-next: 2.1.1
-  json-loader: 0.5.7
   next: 12.3.1_7xlrwlvvs7cv2obrs6a5y6oxxq
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -1172,10 +1170,6 @@ packages:
     resolution: {integrity: sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==}
     engines: {node: '>=4'}
     hasBin: true
-    dev: false
-
-  /json-loader/0.5.7:
-    resolution: {integrity: sha512-QLPs8Dj7lnf3e3QYS1zkCo+4ZwqOiF9d/nZnYozTISxXWCfNs9yuky5rJw4/W34s7POaNlbZmQGaB5NiXCbP4w==}
     dev: false
 
   /json-parse-even-better-errors/2.3.1:
