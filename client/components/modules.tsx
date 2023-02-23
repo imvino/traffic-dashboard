@@ -11,7 +11,7 @@ function dateTitle(date) {
 }
 
 function timeConvert(data, key) {
-    return data?.map(v => {
+    return data?.foreach(v => {
         let timestamp = new Date(Number(v.Date));
         let date = timestamp.toLocaleDateString("en-UK", {
             weekday: "short",
