@@ -58,6 +58,7 @@ export default function Dashboard(props) {
         checkNull(dateR)
     }, [dateR])
 
+    // set default date for null value
     function checkNull(d) {
         if (d.some(el => el === null)) {
             setDateR(defaultRange)

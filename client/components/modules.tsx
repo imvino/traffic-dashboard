@@ -1,3 +1,4 @@
+//add date to chart title
 function dateTitle(date) {
     let conv = (date) => {
         let timestamp = new Date(date);
@@ -9,7 +10,7 @@ function dateTitle(date) {
     return conv(date[0]) + ' to ' + conv(date[1])
 
 }
-
+// convert timestamp to min for chart
 function timeConvert(data, key) {
     if (data?.hasOwnProperty('error')) return []
     return data?.map(v => {
